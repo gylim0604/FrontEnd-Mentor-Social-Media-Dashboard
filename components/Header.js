@@ -11,9 +11,16 @@ import React from 'react';
 function Header() {
     return (
         <Container>
-            <Heading>Social Media Dashboard</Heading>
+            <Heading as='h1' size='lg'>
+                Social Media Dashboard
+            </Heading>
             <Text>Total Followers: 23,004</Text>
-            <FormControl>
+            <FormControl
+                borderTop='1px solid black'
+                display={{ base: 'flex' }}
+                justifyContent={{ base: 'space-between' }}
+                alignItems={{ base: 'center' }}
+            >
                 <FormLabel htmlFor='theme-switch' mb='0'>
                     Dark Mode
                 </FormLabel>

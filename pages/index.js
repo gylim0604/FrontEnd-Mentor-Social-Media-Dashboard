@@ -1,9 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import Header from '../components/Header';
 import Dashboard from '../components/Dashboard/Dashboard';
-import DailyOverview from '../components/DailyOverview';
+import DailyOverview from '../components/Overview/DailyOverview';
 import { Box } from '@chakra-ui/layout';
 
 export default function Home() {
