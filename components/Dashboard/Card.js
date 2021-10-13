@@ -1,20 +1,10 @@
-import { VStack, Box, Text, useToken } from '@chakra-ui/react';
+import { VStack, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
 import { Facebook, Instagram, Twitter, Youtube } from '../Utils/Icons';
 
 function Card({ social_media, handle, amount, unit, change }) {
-    // const [facebook, twitter, instagram, youtube] = useToken(
-    //     // the key within the theme, in this case `theme.colors`
-    //     'colors',
-    //     // the subkey(s), resolving to `theme.colors.red.100`
-    //     [
-    //         'primary-facebook',
-    //         'primary-twitter',
-    //         'primary-instagram',
-    //         'primary-youtube',
-    //     ]
-    //     // a single fallback or fallback array matching the length of the previous arg
-    // );
+    const bg = useColorModeValue('light--card-gray', 'dark--card-blue');
+    const bold = useColorModeValue('light--bold-blue', 'dark--bold--white');
     // Could use enums here but for this demo I won't
     const renderIcon = (social_media) => {
         switch (social_media) {
@@ -34,7 +24,6 @@ function Card({ social_media, handle, amount, unit, change }) {
                 break;
         }
     };
-
     const socialMediaColor = (social_media) => {
         switch (social_media) {
             case 'facebook':
@@ -53,9 +42,10 @@ function Card({ social_media, handle, amount, unit, change }) {
                 break;
         }
     };
+
     return (
         <VStack
-            bg='light--light-gray'
+            bg={bg}
             py='2rem'
             textAlign='center'
             borderRadius='7.5px'
@@ -73,7 +63,7 @@ function Card({ social_media, handle, amount, unit, change }) {
             </Box>
             <Box>
                 <Text>
-                    <Box as='span' fontSize='3rem' color='light--dark-blue'>
+                    <Box as='span' fontSize='3rem' color={bold}>
                         {amount}
                     </Box>
                     <br />
