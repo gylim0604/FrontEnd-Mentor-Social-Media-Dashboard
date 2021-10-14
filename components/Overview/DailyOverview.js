@@ -1,13 +1,19 @@
 import { Container, Grid } from '@chakra-ui/layout';
 import React from 'react';
-import { Heading } from '@chakra-ui/react';
+import { Heading, useColorModeValue } from '@chakra-ui/react';
 import Card from './Card';
 import { Facebook, Instagram, Twitter, Youtube } from '../Utils/Icons';
 function DailyOverview() {
+    const bold = useColorModeValue('light--bold-blue', 'dark--bold--white');
     return (
-        <Container>
-            <Heading>Overview - Today</Heading>
-            <Grid gap='1rem'>
+        <Container Container maxW={{ lg: 'container.lg' }} py={{ lg: '4rem' }}>
+            <Heading as='h3' fontSize='1.5rem' pb='2rem' color={bold}>
+                Overview - Today
+            </Heading>
+            <Grid
+                gap={{ base: '1rem', lg: '2rem' }}
+                gridTemplateColumns={{ lg: 'repeat(4,1fr)' }}
+            >
                 <Card
                     icon={<Facebook />}
                     title='Page Views'

@@ -5,6 +5,7 @@ import {
     FormLabel,
     Switch,
     Text,
+    Box,
     useColorMode,
     useColorModeValue,
 } from '@chakra-ui/react';
@@ -22,19 +23,27 @@ function Header() {
         'linear gradient (to left ,hsl(210, 78%, 56%), hsl(146, 68%, 55%))'
     );
     return (
-        <Container>
-            <Heading as='h1' size='lg' color={bold}>
-                Social Media Dashboard
-            </Heading>
-            <Text pb='1rem'>Total Followers: 23,004</Text>
+        <Container
+            maxW={{ lg: 'container.lg' }}
+            d={{ lg: 'flex' }}
+            justifyContent={{ lg: 'space-between' }}
+            pt='2rem'
+        >
+            <Box as='span'>
+                <Heading as='h1' size='lg' color={bold}>
+                    Social Media Dashboard
+                </Heading>
+                <Text pb='1rem'>Total Followers: 23,004</Text>
+            </Box>
             <FormControl
-                borderTop='1px solid'
+                borderTop={{ base: '1px solid', lg: 'none' }}
                 borderTopColor={borderColor}
                 display={{ base: 'flex' }}
                 justifyContent={{ base: 'space-between' }}
                 alignItems={{ base: 'center' }}
-                py='1rem'
-                my='1rem'
+                py={{ base: '1rem', lg: 'unset' }}
+                my={{ base: '1rem', lg: 'unset' }}
+                w={{ lg: '200px' }}
             >
                 <FormLabel htmlFor='theme-switch' mb='0' fontWeight='700'>
                     Dark Mode

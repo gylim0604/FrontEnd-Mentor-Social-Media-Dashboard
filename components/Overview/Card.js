@@ -1,17 +1,26 @@
 import React from 'react';
-import { Flex, Box, Heading, Text, useColorModeValue } from '@chakra-ui/react';
+import {
+    Flex,
+    Box,
+    Heading,
+    Text,
+    useColorModeValue,
+    useMediaQuery,
+} from '@chakra-ui/react';
 import { ArrowDown, ArrowUp } from '../Utils/Icons';
 
 function Card({ icon, title, amount, change }) {
     const bg = useColorModeValue('light--card-gray', 'dark--card-blue');
     const bold = useColorModeValue('light--bold-blue', 'dark--bold--white');
+    const [flexGap] = useMediaQuery('(min-width:(1000px)');
     return (
         <Flex
             flexDir='column'
             bg={bg}
-            py='1.5rem'
+            py={{ base: '1.5rem', lg: '1.75rem' }}
             px='2rem'
-            style={{ gap: '1rem' }}
+            style={{ gap: flexGap ? '20rem' : '2rem' }}
+            borderRadius='10px'
         >
             <Box d='flex' justifyContent='space-between'>
                 <Heading as='h4' size='sm'>

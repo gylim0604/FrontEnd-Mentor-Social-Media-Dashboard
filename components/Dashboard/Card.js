@@ -1,6 +1,13 @@
 import { VStack, Box, Text, useColorModeValue } from '@chakra-ui/react';
 import React from 'react';
-import { Facebook, Instagram, Twitter, Youtube } from '../Utils/Icons';
+import {
+    Facebook,
+    Instagram,
+    Twitter,
+    Youtube,
+    ArrowDown,
+    ArrowUp,
+} from '../Utils/Icons';
 
 function Card({ social_media, handle, amount, unit, change }) {
     const bg = useColorModeValue('light--card-gray', 'dark--card-blue');
@@ -63,7 +70,11 @@ function Card({ social_media, handle, amount, unit, change }) {
             </Box>
             <Box>
                 <Text>
-                    <Box as='span' fontSize='3rem' color={bold}>
+                    <Box
+                        as='span'
+                        fontSize={{ base: '3rem', lg: '4rem' }}
+                        color={bold}
+                    >
                         {amount}
                     </Box>
                     <br />
@@ -79,7 +90,13 @@ function Card({ social_media, handle, amount, unit, change }) {
             </Box>
             <Box
                 color={change?.direction == 'up' ? 'lime-green' : 'bright-red'}
+                d='flex'
+                flexDir='row'
+                alignItems='center'
+                style={{ gap: '3px' }}
+                pt={{ lg: '1rem' }}
             >
+                {change?.direction == 'up' ? <ArrowUp /> : <ArrowDown />}
                 <Text>{change?.value}</Text>
             </Box>
         </VStack>
