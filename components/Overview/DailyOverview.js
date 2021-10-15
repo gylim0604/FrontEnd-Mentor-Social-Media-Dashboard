@@ -6,12 +6,16 @@ import { Facebook, Instagram, Twitter, Youtube } from '../Utils/Icons';
 function DailyOverview() {
     const bold = useColorModeValue('light--bold-blue', 'dark--bold--white');
     return (
-        <Container Container maxW={{ lg: 'container.lg' }} py={{ lg: '4rem' }}>
+        <Container
+            Container
+            maxW={{ lg: 'container.lg' }}
+            py={{ base: '3rem', lg: '4rem' }}
+        >
             <Heading as='h3' fontSize='1.5rem' pb='2rem' color={bold}>
                 Overview - Today
             </Heading>
             <Grid
-                gap={{ base: '1rem', lg: '2rem' }}
+                gap={{ base: '1.5rem', lg: '2rem' }}
                 gridTemplateColumns={{ lg: 'repeat(4,1fr)' }}
             >
                 <Card

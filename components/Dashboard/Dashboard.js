@@ -6,7 +6,7 @@ function Dashboard() {
     return (
         <Container maxW={{ lg: 'container.lg' }}>
             <Grid
-                gap={{ base: '1rem', lg: '2rem' }}
+                gap={{ base: '1.5rem', lg: '2rem' }}
                 gridTemplateColumns={{ lg: 'repeat(4,1fr)' }}
             >
                 <Card

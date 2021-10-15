@@ -55,9 +55,23 @@ function Card({ social_media, handle, amount, unit, change }) {
             bg={bg}
             py='2rem'
             textAlign='center'
-            borderRadius='7.5px'
-            borderTop='5px solid'
-            borderTopColor={socialMediaColor(social_media)}
+            borderBottomRightRadius='7.5px'
+            borderBottomLeftRadius='7.5px'
+            borderTop='5px solid transparent'
+            pos='relative'
+            _after={{
+                content: "''",
+                position: 'absolute',
+                top: 0,
+                width: '100%',
+                height: '5px',
+                margin: '-5px 0' /* !importanté */,
+                borderRadius: 'inherit' /* !importanté */,
+                background: socialMediaColor(social_media),
+                borderRadius: 'unset',
+                borderTopLeftRadius: '7.5px',
+                borderTopRightRadius: '7.5px',
+            }}
         >
             <Box
                 d='flex'
