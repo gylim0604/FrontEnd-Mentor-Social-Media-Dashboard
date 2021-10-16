@@ -24,15 +24,15 @@ function Header() {
     );
     return (
         <Container
-            maxW={{ lg: 'container.lg' }}
-            d={{ lg: 'flex' }}
-            justifyContent={{ lg: 'space-between' }}
+            maxW={{ md: 'container.md', lg: 'container.lg' }}
+            d={{ md: 'flex' }}
+            justifyContent={{ md: 'space-between' }}
             py='2rem'
         >
             <Box as='span'>
                 <Heading
                     as='h1'
-                    fontSize={{ base: '1.5rem', lg: '2rem' }}
+                    fontSize={{ base: '1.5rem', md: '2rem' }}
                     color={bold}
                 >
                     Social Media Dashboard
@@ -40,14 +40,14 @@ function Header() {
                 <Text pb='1rem'>Total Followers: 23,004</Text>
             </Box>
             <FormControl
-                borderTop={{ base: '1px solid', lg: 'none' }}
+                borderTop={{ base: '1px solid', md: 'none' }}
                 borderTopColor={borderColor}
                 display={{ base: 'flex' }}
                 justifyContent={{ base: 'space-between' }}
                 alignItems={{ base: 'center' }}
-                py={{ base: '1rem', lg: 'unset' }}
-                my={{ base: '1rem', lg: 'unset' }}
-                w={{ lg: '140px' }}
+                py={{ base: '1rem', md: 'unset' }}
+                my={{ base: '1rem', md: 'unset' }}
+                w={{ md: '140px' }}
             >
                 <FormLabel htmlFor='theme-switch' mb='0' fontWeight='700'>
                     Dark Mode
@@ -60,6 +60,7 @@ function Header() {
                     style={{
                         transform: 'rotate(180deg)',
                     }}
+                    size='test'
                     _focus={{}}
                 />
             </FormControl>

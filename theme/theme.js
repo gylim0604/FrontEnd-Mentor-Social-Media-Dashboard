@@ -9,15 +9,36 @@ const config = {
 
 const breakpoints = createBreakpoints({
     sm: '320px',
-    md: '1024px',
+    md: '720px',
     lg: '1400px',
     xl: '2100px',
 });
-const Heading = {
-    // baseStyle: {
-    //     textTransform: 'uppercase', // Normally, it is "semibold"
-    //     fontWeight: '300',
-    // },
+const Switch = {
+    baseStyle: (props) => ({
+        track: {
+            _focus: {
+                boxShadow: 'none',
+            },
+        },
+        thumb: {
+            bg: mode('light--white', 'dark--bg-blue')(props),
+        },
+    }),
+    sizes: {
+        test: {
+            track: {
+                width: '40px',
+                height: '1rem',
+            },
+            thumb: {
+                width: '15px',
+                height: '1rem',
+                _checked: {
+                    transform: `translateX(25px)`,
+                },
+            },
+        },
+    },
 };
 const Container = {
     baseStyle: {
@@ -40,10 +61,9 @@ const styles = {
 };
 const theme = extendTheme({
     breakpoints,
-    // components: {
-    //     Container,
-    //     Heading,
-    // },
+    components: {
+        Switch,
+    },
     styles,
     colors: {
         // Primary colors
@@ -92,7 +112,7 @@ const theme = extendTheme({
     sizes: {
         container: {
             sm: '640px',
-            md: '1000px',
+            md: '900px',
             lg: '1400px',
         },
     },

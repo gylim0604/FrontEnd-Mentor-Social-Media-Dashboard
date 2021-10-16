@@ -4,10 +4,13 @@ import Card from './Card';
 
 function Dashboard() {
     return (
-        <Container maxW={{ lg: 'container.lg' }}>
+        <Container maxW={{ md: 'container.md', lg: 'container.lg' }}>
             <Grid
                 gap={{ base: '1.5rem', lg: '2rem' }}
-                gridTemplateColumns={{ lg: 'repeat(4,1fr)' }}
+                gridTemplateColumns={{
+                    md: 'repeat(2,1fr)',
+                    lg: 'repeat(4,1fr)',
+                }}
             >
                 <Card
                     social_media='facebook'

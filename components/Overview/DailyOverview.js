@@ -8,7 +8,7 @@ function DailyOverview() {
     return (
         <Container
             Container
-            maxW={{ lg: 'container.lg' }}
+            maxW={{ md: 'container.md', lg: 'container.lg' }}
             py={{ base: '3rem', lg: '4rem' }}
         >
             <Heading as='h3' fontSize='1.5rem' pb='2rem' color={bold}>
@@ -16,7 +16,10 @@ function DailyOverview() {
             </Heading>
             <Grid
                 gap={{ base: '1.5rem', lg: '2rem' }}
-                gridTemplateColumns={{ lg: 'repeat(4,1fr)' }}
+                gridTemplateColumns={{
+                    md: 'repeat(2,1fr)',
+                    lg: 'repeat(4,1fr)',
+                }}
             >
                 <Card
                     icon={<Facebook />}
@@ -43,25 +46,25 @@ function DailyOverview() {
                     change={{ value: '1375%', direction: 'up' }}
                 />
                 <Card
-                    icon={<Twitter />}
+                    icon={<Twitter h='24px' w='24px' />}
                     title='Retweets'
                     amount='117'
                     change={{ value: '303%', direction: 'up' }}
                 />
                 <Card
-                    icon={<Twitter />}
+                    icon={<Twitter h='24px' w='24px' />}
                     title='Likes'
                     amount='507'
                     change={{ value: '553%', direction: 'up' }}
                 />
                 <Card
-                    icon={<Youtube />}
+                    icon={<Youtube h='24px' w='24px' />}
                     title='Likes'
                     amount='107'
                     change={{ value: '19%', direction: 'down' }}
                 />
                 <Card
-                    icon={<Youtube />}
+                    icon={<Youtube h='24px' w='24px' />}
                     title='Total Views'
                     amount='1407'
                     change={{ value: '12%', direction: 'down' }}

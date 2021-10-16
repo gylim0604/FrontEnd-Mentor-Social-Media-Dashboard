@@ -22,10 +22,10 @@ function Card({ social_media, handle, amount, unit, change }) {
                 return <Instagram />;
                 break;
             case 'twitter':
-                return <Twitter />;
+                return <Twitter h='24px' w='24px' />;
                 break;
             case 'youtube':
-                return <Youtube />;
+                return <Youtube h='24px' w='24px' />;
                 break;
             default:
                 break;
